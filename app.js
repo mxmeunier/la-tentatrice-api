@@ -34,7 +34,6 @@ app.get('/api/ingredients/:id', (req, res) => {
 });
 
 app.post('/api/ingredients', (req, res) => {
-	console.log(req.body);
 	if(!req.body.name) {
     return res.status(400).send({
       success: 'false',
@@ -50,6 +49,22 @@ app.post('/api/ingredients', (req, res) => {
 		success: 'true',
 		message: 'ingredient added successfully',
 		ingredient
+	});
+});
+
+app.delete('/api/ingredients/:id', (req, res) => {
+	db.ingredients.find((ingredient, index) => {
+		if(req.params.id == ingredient.id) {
+			res.status(201).send({
+				success: 'true',
+				message: `ingredient ${ingredient.name} has been removed`
+			})
+			delete db.ingredients[index];
+		}
+	});
+	res.status(404).send({
+		success: 'false',
+		message: 'ingredient not found'
 	});
 });
 
