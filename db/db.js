@@ -5,4 +5,4 @@ const ingredients =  [
 	}
 ];
 
-export default ingredients;
+module.exports.ingredients = ingredients;
