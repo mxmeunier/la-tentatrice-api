@@ -1,0 +1,22 @@
+{
+  "name": "la-tentatrice-api",
+  "version": "1.0.0",
+  "description": "API to serve data to La Tentatrice application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mxmeunier/la-tentatrice-api.git"
+  },
+  "author": "Maxime Meunier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mxmeunier/la-tentatrice-api/issues"
+  },
+  "homepage": "https://github.com/mxmeunier/la-tentatrice-api#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
