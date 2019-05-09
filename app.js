@@ -15,6 +15,24 @@ app.get('/api/ingredients', (req, res) => {
 	});
 });
 
+app.get('/api/ingredients/:id', (req, res) => {
+	const id = parseInt(req.params.id, 10);
+
+	db.ingredients.find((ingredient) => {
+		if(ingredient.id == id) {
+			res.status(200).send({
+				success: 'true',
+				message: `${ingredient.name} retrieved successfully`
+			})
+		}
+	});
+
+	res.status(404).send({
+		success: 'false',
+		message: 'ingredient does not exist'
+	});
+});
+
 app.post('/api/ingredients', (req, res) => {
 	console.log(req.body);
 	if(!req.body.name) {
